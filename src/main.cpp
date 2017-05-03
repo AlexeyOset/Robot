@@ -25,6 +25,7 @@ for(;;)
 Mat frame;
 cap >> frame; // get a new frame from camera
 //cvtColor(frame, BGR, CV_BGR2RGB);
+//через Vec
 Vec3b pixel = frame.at<Vec3b>(y,x);
 b= pixel[0]; 
 g=pixel[1];
@@ -34,7 +35,7 @@ line(frame, Point(x,y), Point(x,y+20),Scalar(0, 55, 255),2);
 line(frame, Point(x+10,y), Point(x+20,y),Scalar(0, 55, 255),2);
 line(frame, Point(x,y-10), Point(x,y-20),Scalar(0, 55, 255),2);
 line(frame, Point(x-10,y), Point(x-20,y),Scalar(0, 55, 255),2);
-//imshow("edges", frame);
+
 
 //split(frame, BGR);
 
@@ -43,7 +44,6 @@ line(frame, Point(x-10,y), Point(x-20,y),Scalar(0, 55, 255),2);
 //int g=(int)frame.data[frame.channels()*(frame.cols *y+x)+1];
 //int r=(int)frame.data[frame.channels()*(frame.cols *y+x)+2];
 
-//через Vec
 
 imshow("edges", frame);
 //класический способ (разкоментить split)
